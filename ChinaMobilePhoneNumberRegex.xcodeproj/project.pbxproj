@@ -7,41 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93F62DFD1A433D91003A087A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62DFC1A433D91003A087A /* AppDelegate.swift */; };
-		93F62DFF1A433D91003A087A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F62DFE1A433D91003A087A /* Images.xcassets */; };
-		93F62E021A433D91003A087A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F62E001A433D91003A087A /* MainMenu.xib */; };
 		93F62E0E1A433D91003A087A /* ChinaMobilePhoneNumberRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E0D1A433D91003A087A /* ChinaMobilePhoneNumberRegexTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		93F62E081A433D91003A087A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93F62DEF1A433D91003A087A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93F62DF61A433D91003A087A;
-			remoteInfo = ChinaMobilePhoneNumberRegex;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		93F62DF71A433D91003A087A /* ChinaMobilePhoneNumberRegex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinaMobilePhoneNumberRegex.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		93F62DFB1A433D91003A087A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93F62DFC1A433D91003A087A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93F62DFE1A433D91003A087A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		93F62E011A433D91003A087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		93F62E071A433D91003A087A /* ChinaMobilePhoneNumberRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChinaMobilePhoneNumberRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F62E0C1A433D91003A087A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F62E0D1A433D91003A087A /* ChinaMobilePhoneNumberRegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaMobilePhoneNumberRegexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		93F62DF41A433D91003A087A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93F62E041A433D91003A087A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,7 +30,6 @@
 		93F62DEE1A433D91003A087A = {
 			isa = PBXGroup;
 			children = (
-				93F62DF91A433D91003A087A /* ChinaMobilePhoneNumberRegex */,
 				93F62E0A1A433D91003A087A /* ChinaMobilePhoneNumberRegexTests */,
 				93F62DF81A433D91003A087A /* Products */,
 			);
@@ -64,29 +38,9 @@
 		93F62DF81A433D91003A087A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93F62DF71A433D91003A087A /* ChinaMobilePhoneNumberRegex.app */,
 				93F62E071A433D91003A087A /* ChinaMobilePhoneNumberRegexTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		93F62DF91A433D91003A087A /* ChinaMobilePhoneNumberRegex */ = {
-			isa = PBXGroup;
-			children = (
-				93F62DFC1A433D91003A087A /* AppDelegate.swift */,
-				93F62DFE1A433D91003A087A /* Images.xcassets */,
-				93F62E001A433D91003A087A /* MainMenu.xib */,
-				93F62DFA1A433D91003A087A /* Supporting Files */,
-			);
-			path = ChinaMobilePhoneNumberRegex;
-			sourceTree = "<group>";
-		};
-		93F62DFA1A433D91003A087A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				93F62DFB1A433D91003A087A /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		93F62E0A1A433D91003A087A /* ChinaMobilePhoneNumberRegexTests */ = {
@@ -109,23 +63,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93F62DF61A433D91003A087A /* ChinaMobilePhoneNumberRegex */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93F62E111A433D91003A087A /* Build configuration list for PBXNativeTarget "ChinaMobilePhoneNumberRegex" */;
-			buildPhases = (
-				93F62DF31A433D91003A087A /* Sources */,
-				93F62DF41A433D91003A087A /* Frameworks */,
-				93F62DF51A433D91003A087A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ChinaMobilePhoneNumberRegex;
-			productName = ChinaMobilePhoneNumberRegex;
-			productReference = 93F62DF71A433D91003A087A /* ChinaMobilePhoneNumberRegex.app */;
-			productType = "com.apple.product-type.application";
-		};
 		93F62E061A433D91003A087A /* ChinaMobilePhoneNumberRegexTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F62E141A433D91003A087A /* Build configuration list for PBXNativeTarget "ChinaMobilePhoneNumberRegexTests" */;
@@ -137,7 +74,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				93F62E091A433D91003A087A /* PBXTargetDependency */,
 			);
 			name = ChinaMobilePhoneNumberRegexTests;
 			productName = ChinaMobilePhoneNumberRegexTests;
@@ -153,12 +89,8 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Vincent Sit";
 				TargetAttributes = {
-					93F62DF61A433D91003A087A = {
-						CreatedOnToolsVersion = 6.1;
-					};
 					93F62E061A433D91003A087A = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 93F62DF61A433D91003A087A;
 					};
 				};
 			};
@@ -175,22 +107,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93F62DF61A433D91003A087A /* ChinaMobilePhoneNumberRegex */,
 				93F62E061A433D91003A087A /* ChinaMobilePhoneNumberRegexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		93F62DF51A433D91003A087A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93F62DFF1A433D91003A087A /* Images.xcassets in Resources */,
-				93F62E021A433D91003A087A /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93F62E051A433D91003A087A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,14 +123,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		93F62DF31A433D91003A087A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93F62DFD1A433D91003A087A /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93F62E031A433D91003A087A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,25 +132,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		93F62E091A433D91003A087A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93F62DF61A433D91003A087A /* ChinaMobilePhoneNumberRegex */;
-			targetProxy = 93F62E081A433D91003A087A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		93F62E001A433D91003A087A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93F62E011A433D91003A087A /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		93F62E0F1A433D91003A087A /* Debug */ = {
@@ -273,7 +168,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -310,38 +205,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		93F62E121A433D91003A087A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ChinaMobilePhoneNumberRegex/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		93F62E131A433D91003A087A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ChinaMobilePhoneNumberRegex/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		93F62E151A433D91003A087A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -354,14 +226,12 @@
 				INFOPLIST_FILE = ChinaMobilePhoneNumberRegexTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChinaMobilePhoneNumberRegex.app/Contents/MacOS/ChinaMobilePhoneNumberRegex";
 			};
 			name = Debug;
 		};
 		93F62E161A433D91003A087A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -370,7 +240,6 @@
 				INFOPLIST_FILE = ChinaMobilePhoneNumberRegexTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChinaMobilePhoneNumberRegex.app/Contents/MacOS/ChinaMobilePhoneNumberRegex";
 			};
 			name = Release;
 		};
@@ -386,14 +255,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93F62E111A433D91003A087A /* Build configuration list for PBXNativeTarget "ChinaMobilePhoneNumberRegex" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93F62E121A433D91003A087A /* Debug */,
-				93F62E131A433D91003A087A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		93F62E141A433D91003A087A /* Build configuration list for PBXNativeTarget "ChinaMobilePhoneNumberRegexTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -401,6 +262,7 @@
 				93F62E161A433D91003A087A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
