@@ -42,21 +42,25 @@ class ChinaMobilePhoneNumberRegexTests: XCTestCase {
   var ChinaMobilePrefixes: NSArray!
   var ChinaUnicomPrefixes: NSArray!
   var ChinaTelecomPrefixes: NSArray!
+  var VNOPrefixes: NSArray!
   
   override func setUp() {
     super.setUp()
     
-    let regex = "(^(13\\d|14[57]|15[^4,\\D]|17[678]|18\\d)\\d{8}|170[059]\\d{7})$"
+    let regex = "(^(13\\d|15[^4,\\D]|17[13678]|18\\d)\\d{8}|170[^346,\\D]\\d{7})$"
+    
     self.predicate = NSPredicate(format: "SELF MATCHES %@", regex)
     
     self.ChinaMobilePrefixes = ["134", "135", "136", "137", "138", "139", "150",
                                 "151", "152", "158", "159", "182", "183", "184",
-                                "157", "187", "188", "178", "147", "1705"]
+                                "157", "187", "188", "178", "184"]
     
     self.ChinaUnicomPrefixes = ["130", "131", "132", "155", "156", "185", "186",
-                                "176", "185", "145", "1709"]
+                                "176"]
     
-    self.ChinaTelecomPrefixes = ["133", "153", "180", "181", "189", "177", "1700"]
+    self.ChinaTelecomPrefixes = ["133", "153", "180", "181", "189", "177", "173"]
+    
+    self.VNOPrefixes = ["171", "1700", "1701", "1702", "1705", "1707", "1708", "1709"]
   }
   
   override func tearDown() {
@@ -73,10 +77,10 @@ class ChinaMobilePhoneNumberRegexTests: XCTestCase {
     let testingTimes = 100
     let phoneNumberLength = 11
     
-    for prefix in phoneNumbers as [NSString] {
+    for prefix in phoneNumbers as! [NSString] {
       for _ in 0...testingTimes {
         let randomNumber = arc4random() % 99999999 + 10000000
-        var phoneNumber: NSString = prefix + String(randomNumber)
+        var phoneNumber: NSString = (prefix as String) + String(randomNumber)
 
         if phoneNumber.length > phoneNumberLength {
           phoneNumber = phoneNumber.substringToIndex(phoneNumberLength)
@@ -85,10 +89,6 @@ class ChinaMobilePhoneNumberRegexTests: XCTestCase {
         XCTAssertTrue(self.predicate.evaluateWithObject(phoneNumber), "Pass")
       }
     }
-  }
-  
-  func doTestIncorrectPhoneNumbers(phoneNumbers: NSArray!) {
-    //TODO: 错误 case 测试.
   }
   
   func testChinaMobile() {
@@ -101,6 +101,10 @@ class ChinaMobilePhoneNumberRegexTests: XCTestCase {
   
   func testChinaTelecom() {
     self.doTestCorrectPhoneNumbers(self.ChinaTelecomPrefixes)
+  }
+  
+  func testVNO() {
+    self.doTestCorrectPhoneNumbers(self.VNOPrefixes)
   }
   
 }
