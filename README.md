@@ -1,59 +1,80 @@
-ChinaMobilePhoneNumberRegex
-===========================
+# ChinaMobilePhoneNumberRegex
 
-目前国内网络上匹配手机号码的正则表达式很多都无法匹配最新的号码段，影响用户操作，故在此分享一个正则表达式来匹配中国大陆的手机号码段。
+## [中文文档](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/blob/master/README-CN.md "Chinese documentation")
 
->电信   
->2G/3G号段（CDMA2000网络）133、153、180、181、189   
->4G号段 177、173   
-   
->联通   
->2G号段（GSM网络）130、131、132、155、156   
->3G上网卡145   
->3G号段（WCDMA网络）185、186   
->4G号段 176、185   
->   
->移动   
->2G号段（GSM网络）有134x（0-8）、135、136、137、138、139、150、151、152、158、159、182、183、184。   
->3G号段（TD-SCDMA网络）有157、187、188   
->3G上网卡 147   
->4G号段 178、184   
->   
->卫星通信 1349   
+A set of regular expressions to match the mobile phone number in mainland China.
 
-以上内容来自[手机号码(百度百科)](http://baike.baidu.com/view/781667.htm)
+## Regular Expressions
 
-虚拟运营商号码段：
-   
->电信 1700、1701、1702   
->联通 1707、1708、1709、171   
->移动 1705   
+#### Match all:
 
-以上内容来自[170号段(百度百科)](http://baike.baidu.com/view/12118274.htm)
+[`^(?:13\d|14[57]|15[^4\D]|17[^249\D]|18\d)\d{8}$`](https://regexper.com/#%5E(%3F%3A13%5Cd%7C14%5B57%5D%7C15%5B%5E4%5CD%5D%7C17%5B%5E249%5CD%5D%7C18%5Cd)%5Cd%7B8%7D%24)
 
-整理如下：   
+#### Except satellite phone numbers:
 
-```
-130、131、132、133、134、135、136、137、138、139
-150、151、152、153、155、156、157、158、159
-173、176、177、178
-180、181、182、183、184、185、186、187、188、189
-171、1700、1701、1702、1705、1707、1708、1709
-```
+[`^(?:13(?!49)\d|14[57]|15[^4\D]|17[^249\D]|18\d)\d{8}$`](https://regexper.com/#%5E(%3F%3A13(%3F!49)%5Cd%7C14%5B57%5D%7C15%5B%5E4%5CD%5D%7C17%5B%5E249%5CD%5D%7C18%5Cd)%5Cd%7B8%7D%24)
 
-正则表达式为：   
-未转义：`(^(13\d|15[^4\D]|17[13678]|18\d)\d{8}|170[^346\D]\d{7})$`。   
-已转义：`(^(13\\d|15[^4\\D]|17[13678]|18\\d)\\d{8}|170[^346\\D]\\d{7})$`。   
+#### Except data-only phone numbers:
 
-默认 14x 上网卡号段为无效号码，如果希望其为有效号码，则正则表达式为：   
-未转义：`(^(13\d|14[57]|15[^4\D]|17[13678]|18\d)\d{8}|170[^346\D]\d{7})$`。   
-已转义：`(^(13\\d|14[57]|15[^4\\D]|17[13678]|18\\d)\\d{8}|170[^346\\D]\\d{7})$`。
+[`^(?:13\d|15[^4\D]|17[^249\D]|18\d)\d{8}$`](https://regexper.com/#%5E(%3F%3A13%5Cd%7C15%5B%5E4%5CD%5D%7C17%5B%5E249%5CD%5D%7C18%5Cd)%5Cd%7B8%7D%24)
+
+#### Except both satellite and data-only phone numbers:
+
+[`^(?:13(?!49)\d|15[^4\D]|17[^249\D]|18\d)\d{8}$`](https://regexper.com/#%5E(%3F%3A13(%3F!49)%5Cd%7C15%5B%5E4%5CD%5D%7C17%5B%5E249%5CD%5D%7C18%5Cd)%5Cd%7B8%7D%24)
+
+<br>
+Note: These regular expressions can only match the **mobile phone number** in **mainland China**.
 
 
-###版本更新
+## Test/Debug Online
 
-2016.4.5   
-增加 171 号段支持，分离 14x 号段匹配，完善虚拟运营商号段匹配。
+[https://regex101.com/](https://regex101.com/)
 
-2014.12.19    
-初次发布。
+## Rules
+
+| Prefix | Provider | Network |
+| --- | --- | --- |
+| 130/1/2 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 133 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom")<sup>[1]<sup/> | [CDMA](https://en.wikipedia.org/wiki/CDMA "CDMA") |
+| 1340–1348 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 1349 | [ChinaSat](https://en.wikipedia.org/wiki/ChinaSat "ChinaSat") | [Satellite](https://en.wikipedia.org/wiki/Satellite "Satellite") |
+| 135/6/7/8/9 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 145 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")<sup>[2]<sup/> |
+| 147 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM")<sup>[3]<sup/> |
+| 150/1/2/8/9 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 153 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom")<sup>[4]<sup/> | [CDMA](https://en.wikipedia.org/wiki/CDMA "CDMA") |
+| 155 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 156 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM")/[WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")<sup>[5]<sup/> |
+| 157 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
+| 1700/1/2 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
+| 1703/5/6 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 1704/7/8/9 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 171 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 176 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
+| 177 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
+| 178 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
+| 180/1 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
+| 182/3/4 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
+| 185/6 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA") |
+| 187/8 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
+| 189 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
+
+1. Formerly [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom")
+2. Data-plans only. Have the ability to send or receive text or multimedia messages. Do not have the ability to make or receive calls.
+3. Same as 2.
+4. Same as 1.
+5. Upgradeable to WCDMA.
+
+Note: 170 and 171, are allocated to [Mobile virtual network operator](https://en.wikipedia.org/wiki/Mobile_virtual_network_operator "Mobile virtual network operator").
+
+This table is quote from [Telephone numbers in China](https://en.wikipedia.org/wiki/Telephone_numbers_in_China#Mobile_phones) in Wikipedia and made some changes to suit the actual situation.
+
+Recommended that you [watch](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/subscription) this project to get notifications once it has been updated.
+
+## License
+
+Regular expressions are MIT-licensed. 
+
+The documentation is licensed CC BY-SA 3.0.
+
+
