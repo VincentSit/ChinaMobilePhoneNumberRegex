@@ -69,7 +69,7 @@ Note: 170 and 171, are allocated to [Mobile virtual network operator](https://en
 
 This table is quote from [Telephone numbers in China](https://en.wikipedia.org/wiki/Telephone_numbers_in_China#Mobile_phones) in Wikipedia and made some changes to suit the actual situation.
 
-Recommended that you [watch](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/subscription) this project to get notifications once it has been updated.
+Recommended that you subscribe this [issue](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/issues/5) to get notifications once it has been updated.
 
 ## License
 
