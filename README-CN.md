@@ -6,28 +6,28 @@
 
 #### 匹配所有：
 
-[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|7[^249\D]|8\d)\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C7%5B%5E249%5CD%5D%7C8%5Cd)%5Cd%7B8%7D%24)
+[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
 
 #### 匹配除虚拟运营商外的：
 
-[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|7[^01249\D]|8\d)\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C7%5B%5E01249%5CD%5D%7C8%5Cd)%5Cd%7B8%7D%24)
+[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|66|7[^01249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E01249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
 
 #### 匹配除卫星号码外的：
 
-[`^(?=\d{11}$)^1(?:3(?!49)\d|4[57]|5[^4\D]|7[^249\D]|8\d)\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3(%3F!49)%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C7%5B%5E249%5CD%5D%7C8%5Cd)%5Cd%7B8%7D%24)
+[`^(?=\d{11}$)^1(?:3(?!49)\d|4[57]|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3(%3F!49)%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
 
 #### 匹配除上网卡外的：
 
-[`^(?=\d{11}$)^1(?:3\d|5[^4\D]|7[^249\D]|8\d)\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C5%5B%5E4%5CD%5D%7C7%5B%5E249%5CD%5D%7C8%5Cd)%5Cd%7B8%7D%24)
+[`^(?=\d{11}$)^1(?:3\d|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
 
 #### 只匹配中国移动号码：
-[`^(?=\d{11}$)^1((?:3(?!49)[4-9\D]|47|5[012789]|7[8]|8[23478])\d{8}$|70[356]\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1((%3F%3A3(%3F!49)%5B4-9%5CD%5D%7C47%7C5%5B012789%5D%7C7%5B8%5D%7C8%5B23478%5D)%5Cd%7B8%7D%24%7C70%5B356%5D%5Cd%7B7%7D%24))
+[`^(?=\d{11}$)^1(?:(?:3(?!49)[4-9\D]|47|5[012789]|78|8[23478]|98)\d{8}$|(?:70[356])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A3(%3F!49)%5B4-9%5CD%5D%7C47%7C5%5B012789%5D%7C78%7C8%5B23478%5D%7C98)%5Cd%7B8%7D%24%7C(%3F%3A70%5B356%5D)%5Cd%7B7%7D%24))
 
 #### 只匹配中国联通号码：
-[`^(?=\d{11}$)^1((?:3[0-2]|45|5[56]|7[156]|8[56])\d{8}$|70[4789]\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1((%3F%3A3%5B0-2%5D%7C45%7C5%5B56%5D%7C7%5B156%5D%7C8%5B56%5D)%5Cd%7B8%7D%24%7C70%5B4789%5D%5Cd%7B7%7D%24))
+[`^(?=\d{11}$)^1(?:(?:3[0-2]|45|5[56]|66|7[156]|8[56])\d{8}$|(?:70[4789])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A3%5B0-2%5D%7C45%7C5%5B56%5D%7C66%7C7%5B156%5D%7C8%5B56%5D)%5Cd%7B8%7D%24%7C(%3F%3A70%5B4789%5D)%5Cd%7B7%7D%24))
 
 #### 只匹配中国电信号码：
-[`^(?=\d{11}$)^1(?:(?:33|49|53|7[37]|8[019])\d{8}$|(?:349|70[0-2])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A33%7C49%7C53%7C7%5B37%5D%7C8%5B019%5D)%5Cd%7B8%7D%24%7C(%3F%3A349%7C70%5B0-2%5D)%5Cd%7B7%7D%24))
+[`^(?=\d{11}$)^1(?:(?:33|49|53|7[37]|8[019]|99)\d{8}$|(?:349|70[0-2])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A33%7C49%7C53%7C7%5B37%5D%7C8%5B019%5D%7C99)%5Cd%7B8%7D%24%7C(%3F%3A349%7C70%5B0-2%5D)%5Cd%7B7%7D%24))
 
 <br>
 注：这些正则表达式只能匹配**中国大陆**的**手机号码**。
@@ -52,6 +52,7 @@
 | 155 | [中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通") | [GSM](https://zh.wikipedia.org/wiki/GSM "GSM") |
 | 156 | [中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通") | [GSM](https://zh.wikipedia.org/wiki/GSM "GSM")/[WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")<sup>[5]<sup/> |
 | 157 | [中国移动](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8 "中国移动") | [TD-SCDMA](https://zh.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
+| 166 | [中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通") | FDD-LTE/[TD-LTE](https://zh.wikipedia.org/zh-cn/%E9%95%B7%E6%9C%9F%E6%BC%94%E9%80%B2%E6%8A%80%E8%A1%93 "TD-LTE") |
 | 1700/1/2 | [中国电信](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1 "中国电信") | [CDMA2000](https://zh.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
 | 1703/5/6 | [中国移动](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8 "中国移动") | [TD-SCDMA](https://zh.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA")/[GSM](https://zh.wikipedia.org/wiki/GSM "GSM") |
 | 1704/7/8/9 | [中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")/[GSM](https://zh.wikipedia.org/wiki/GSM "GSM") |
@@ -64,6 +65,8 @@
 | 185/6 | [中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA") |
 | 187/8 | [中国移动](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8 "中国移动") | [TD-SCDMA](https://zh.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
 | 189 | [中国电信](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1 "中国电信") | [CDMA2000](https://zh.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
+| 198 | [中国移动](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8 "中国移动") | FDD-LTE/[TD-LTE](https://zh.wikipedia.org/zh-cn/%E9%95%B7%E6%9C%9F%E6%BC%94%E9%80%B2%E6%8A%80%E8%A1%93 "TD-LTE") |
+| 199 | [中国电信](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1 "中国电信") | FDD-LTE/[TD-LTE](https://zh.wikipedia.org/zh-cn/%E9%95%B7%E6%9C%9F%E6%BC%94%E9%80%B2%E6%8A%80%E8%A1%93 "TD-LTE") |
 
 1. 之前是[中国联通](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A "中国联通")。
 2. 数据卡（上网卡）。可以上网或收发短信，不可以接听或拨打电话。
@@ -75,7 +78,24 @@
 
 上表引用自维基百科的[中国内地移动终端通讯号码](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%86%85%E5%9C%B0%E7%A7%BB%E5%8A%A8%E7%BB%88%E7%AB%AF%E9%80%9A%E8%AE%AF%E5%8F%B7%E7%A0%81)并做了一些适当的修改。
 
-为了在未来更新时第一时间得到通知，建议您关注这个 [issue](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/issues/5)。
+## 更新日志
+
+#### 2017.08.09
+- 添加 166\*/198\*/199\* 号段支持。
+
+#### 2016.10.15
+- 添加英文文档。
+- 添加 175 号段支持。
+- 移除测试工程。
+- 修复 1349\* 号段匹配问题。
+
+#### 2016.04.05
+- 添加 171 号段支持。
+- 分离 14\* 号段匹配。
+- 完善虚拟运营商号段匹配。
+
+#### 2014.12.19
+- 初次发布。
 
 ## 协议
 
