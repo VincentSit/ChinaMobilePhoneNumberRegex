@@ -4,100 +4,161 @@
 
 A set of regular expressions to match the mobile phone number in mainland China.
 
-## Regular Expressions
+## Regular Expressions ([PCRE])
 
-#### Match all:
+### Mobile phone number
 
-[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
+#### Match all（Carrier + MVNO）
+`^1(?:3\d{3}|5[^4]\d{2}|8\d{3}|7[^29](?(?<=4)(?:0[0-5]|9\d))|9[189]\d{2}|6[67]\d{2})\d{6}$`
 
-#### Except MVNO phone numbers:
+#### Match all（Carrier + MVNO + Satellite + Emergency）
+`^1(?:3\d{3}|5[^4]\d{2}|8\d{3}|7[^29](?(?<=4)(?:0\d|1[0-2]|9\d))|9[189]\d{2}|6[67]\d{2})\d{6}$`
 
-[`^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|66|7[^01249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E01249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
+#### Match Carrier
+`^1(?:3\d{3}|5[^4]\d{2}|8\d{3}|7[^0129](?(?<=4)(?:0[0-5]|9\d))|9[189]\d{2}|66\d{2})\d{6}$`
 
-#### Except satellite phone numbers:
+##### Match China Mobile
+`^1(?:3[^0-3](?(?<=4)[^9])|5[^3-6]|8[23478]|78|98)\d{7}$`
 
-[`^(?=\d{11}$)^1(?:3(?!49)\d|4[57]|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3(%3F!49)%5Cd%7C4%5B57%5D%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
+##### Match China Unicom
+`^1(?:3[0-2]|[578][56]|66)\d{8}$`
 
-#### Except data-only phone numbers:
+##### Match China Telecom
+`^1(?:3[34](?(?<=4)(?:9)|\d)\d|53\d{2}|8[019]\d{2}|7[347](?(?<=4)(?:0[0-5]))|9[19]\d{2})\d{6}$`
 
-[`^(?=\d{11}$)^1(?:3\d|5[^4\D]|66|7[^249\D]|8\d|9[89])\d{8}$`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A3%5Cd%7C5%5B%5E4%5CD%5D%7C66%7C7%5B%5E249%5CD%5D%7C8%5Cd%7C9%5B89%5D)%5Cd%7B8%7D%24)
+##### Match Inmarsat (Satellite Communications)
+`^1749\d{7}$`
 
-#### Only China Mobile:
-[`^(?=\d{11}$)^1(?:(?:3(?!49)[4-9\D]|47|5[012789]|78|8[23478]|98)\d{8}$|(?:70[356])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A3(%3F!49)%5B4-9%5CD%5D%7C47%7C5%5B012789%5D%7C78%7C8%5B23478%5D%7C98)%5Cd%7B8%7D%24%7C(%3F%3A70%5B356%5D)%5Cd%7B7%7D%24))
+##### Match Emergency Communication Support Center of [MIIT] (Emergency communications)
+`^174(0[0-6]|1[0-2])\d{6}$`
 
-#### Only China Unicom:
-[`^(?=\d{11}$)^1(?:(?:3[0-2]|45|5[56]|66|7[156]|8[56])\d{8}$|(?:70[4789])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A3%5B0-2%5D%7C45%7C5%5B56%5D%7C66%7C7%5B156%5D%7C8%5B56%5D)%5Cd%7B8%7D%24%7C(%3F%3A70%5B4789%5D)%5Cd%7B7%7D%24))
+#### Match MVNO
+`^1(?:7[01]|67)\d{8}$`
 
-#### Only China Telecom:
-[`^(?=\d{11}$)^1(?:(?:33|49|53|7[37]|8[019]|99)\d{8}$|(?:349|70[0-2])\d{7}$)`](https://regexper.com/#%5E(%3F%3D%5Cd%7B11%7D%24)%5E1(%3F%3A(%3F%3A33%7C49%7C53%7C7%5B37%5D%7C8%5B019%5D%7C99)%5Cd%7B8%7D%24%7C(%3F%3A349%7C70%5B0-2%5D)%5Cd%7B7%7D%24))
+##### Match China Mobile
+`^170[356]\d{7}$`
 
+##### Match China Unicom
+`^1(?:67\d|70[4789]|71\d)\d{7}$`
 
-<br>
-Note: These regular expressions can only match the **mobile phone number** in **mainland China**.
+##### Match China Telecom
+`^170[0-2]\d{7}$`
 
+### IoT number
+
+#### Match all
+`^14(?:10\d|40\d|6\d{2}|8\d{2})\d{8}$`
+
+#### Match China Mobile
+`^14(40|8\d)\d{9}$`
+
+#### Match China Unicom
+`^146\d{10}$`
+
+#### Match China Telecom
+`^1410\d{9}$`
+
+### Data only number
+
+#### Match all
+`^14[579]\d{8}$`
+
+#### Match China Mobile
+`^147\d{8}$`
+
+#### Match China Unicom
+`^145\d{8}$`
+
+#### Match China Telecom
+`^149\d{8}$`
+
+### Others
+
+#### Match all numbers with SMS
+`^1(?:3\d{3}|5[^4]\d{2}|8\d{3}|7[^29](?(?<=4)(?:0\d|1[0-2]|9\d))|9[189]\d{2}|6[67]\d{2}|4[579]\d{2})\d{6}$`
 
 ## Test/Debug Online
 
-[https://regex101.com/](https://regex101.com/)
+https://regex101.com   
+https://regexr.com   
+https://www.debuggex.com （PCRE visualizer）
 
 ## Rules
 
-| Prefix | Provider | Network |
+#### Carrier
+
+- Voice calls / SMS / Data traffic
+- 11 digits
+ 
+| Carrier <sup>[1]<sup/> | Prefix |
+| --- | --- |
+| China Mobile | 134-0~8 / 135 / 136 / 137 / 138 / 139 / 150 / 151 / 152 / 157 / 158 / 159 / 178 / 182 / 183 / 184 / 187 / 188 / 198 |
+| China Unicom | 130 / 131 / 132 / 155 / 156 / 166 / 175 / 176 / 185 / 186 |
+| China Telecom | 133 / 134-9 / 153 / 173 / 174-00~05 / 177 / 180 / 181 / 189 / 191 / 199 |
+| Inmarsat (Satellite) <sup>[2]<sup/> | 174-9 |
+| Emergency Communication Support Center of MIIT (Emergency communications) | 174-06~12 |
+
+
+#### MVNO
+
+- Voice calls / SMS / Data traffic
+- 11 digits
+
+| Carrier <sup>[1]<sup/> | Prefix |
+| --- | --- |
+| China Mobile | 1703 / 1705 / 1706 |
+| China Unicom | 167 / 1704 / 1707 / 1708 / 1709 / 171 |
+| China Telecom | 1700 / 1701 / 1702 |
+
+#### IoT
+
+- Data traffic
+- 13 digits
+
+| Carrier <sup>[1]<sup/> | Prefix |
+| --- | --- |
+| China Mobile | 1440X / 148XX |
+| China Unicom | 146XX |
+| China Telecom | 1410X |
+
+#### Data-plans only
+
+- Voice calls (Partial) / SMS / Data traffic
+- 11 digits
+
+| Carrier <sup>[1]<sup/> | Prefix | Voice calls <sup>[3]<sup/> |
 | --- | --- | --- |
-| 130/1/2 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 133 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom")<sup>[1]<sup/> | [CDMA](https://en.wikipedia.org/wiki/CDMA "CDMA") |
-| 1340–1348 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 1349 | [ChinaSat](https://en.wikipedia.org/wiki/ChinaSat "ChinaSat") | [Satellite](https://en.wikipedia.org/wiki/Satellite "Satellite") |
-| 135/6/7/8/9 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 145 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")<sup>[2]<sup/> |
-| 147 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM")<sup>[3]<sup/> |
-| 150/1/2/8/9 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 153 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom")<sup>[4]<sup/> | [CDMA](https://en.wikipedia.org/wiki/CDMA "CDMA") |
-| 155 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 156 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM")/[WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")<sup>[5]<sup/> |
-| 157 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
-| 166 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE")  |
-| 1700/1/2 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
-| 1703/5/6 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 1704/7/8/9 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 171 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA")/[GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 176 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
-| 177 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
-| 178 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE") |
-| 180/1 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
-| 182/3/4 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [GSM](https://en.wikipedia.org/wiki/GSM "GSM") |
-| 185/6 | [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom") | [WCDMA](https://en.wikipedia.org/wiki/WCDMA "WCDMA") |
-| 187/8 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | [TD-SCDMA](https://en.wikipedia.org/wiki/TD-SCDMA "TD-SCDMA") |
-| 189 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000 "CDMA2000") |
-| 198 | [China Mobile](https://en.wikipedia.org/wiki/China_Mobile "China Mobile") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE")  |
-| 199 | [China Telecom](https://en.wikipedia.org/wiki/China_Telecom "China Telecom") | FDD-LTE/[TD-LTE](https://en.wikipedia.org/wiki/TD-LTE "TD-LTE")  |
+| China Mobile | 147 | Yes |
+| China Unicom | 145 | No |
+| China Telecom | 149 | Yes |
 
-1. Formerly [China Unicom](https://en.wikipedia.org/wiki/China_Unicom "China Unicom")
-2. Data-plans only. Have the ability to send or receive text or multimedia messages. Do not have the ability to make or receive calls.
-3. Same as 2.
-4. Same as 1.
-5. Upgradeable to WCDMA.
+1. Since [MNP] has been piloted in some areas, for users who have changed to another carrier, the mobile phone number prefix can no longer reflect its current carrier.
+2. Operated by China Transport Telecommunication & Information Center.
+3. According to the relevant documents of the [MIIT], the voice call function is allowed in 145 / 147 / 149 prefixes, carriers can decide whether to provide voice call function according to the needs of their customers. At present, the 147 / 149 prefixes that supports voice calls is available.
 
-Note: 170 and 171, are allocated to [Mobile virtual network operator](https://en.wikipedia.org/wiki/Mobile_virtual_network_operator "Mobile virtual network operator").
+## Reference
 
-This table is quote from [Telephone numbers in China](https://en.wikipedia.org/wiki/Telephone_numbers_in_China#Mobile_phones) in Wikipedia and made some changes to suit the actual situation.
+[Telephone numbers in China - Wikipedia]
 
 
 ## Release Notes
 
+#### 2018.12.29
+- Added support for 146 / 149 / 167 / 191 / 1440X / 148XX / 1410X / 174\-00\~05 / 174\-06\~12 / 174\-9 prefix.
+
 #### 2017.08.09
-- Added support for 166\*/198\*/199\* numbers.
+- Added support for 166 / 198 / 199 prefix.
 
 #### 2016.10.15
 - Added English documentation.
-- Added support for 175\* numbers.
+- Added support for 175 prefix.
 - Remove test project.
-- Fixed 1349\* matching issues.
+- Fixed 1349 matching issues.
 
 #### 2016.04.05
-- Added the 171\* numbers support.
-- Separated 14\* numbers matching.
-- Improved the virtual operator segment matching.
+- Added the 171 prefix support.
+- Separated 14\* prefix matching.
+- Improved the MVNO prefix matching.
 
 #### 2014.12.19
 - Initial release.
@@ -105,8 +166,14 @@ This table is quote from [Telephone numbers in China](https://en.wikipedia.org/w
 
 ## License
 
-Regular expressions are MIT-licensed. 
+MIT
 
-The documentation is licensed CC BY-SA 3.0.
+[PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
+
+[MNP]: https://en.wikipedia.org/wiki/Mobile_number_portability
+
+[MIIT]: https://en.wikipedia.org/wiki/Ministry_of_Industry_and_Information_Technology
+
+[Telephone numbers in China - Wikipedia]: https://en.wikipedia.org/wiki/Telephone_numbers_in_China
 
 
