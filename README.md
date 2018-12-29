@@ -6,6 +6,9 @@ A set of regular expressions to match the mobile phone number in mainland China.
 
 ## Regular Expressions ([PCRE])
 
+### Match all numbers (Phone number + IoT number + Data only number)
+`^1(?:3\d{3}|5[^4]\d{2}|8\d{3}|7[^29](?(?<=4)(?:0\d|1[0-2]|9\d))|9[189]\d{2}|6[67]\d{2}|4(?:10\d|40\d|6\d{2}|8\d{2}|[579]\d{2}))\d{6}$`
+
 ### Mobile phone number
 
 #### Match all（Carrier + MVNO）
