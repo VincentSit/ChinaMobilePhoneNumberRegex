@@ -14,14 +14,8 @@ A set of regular expressions to match the mobile phone number in mainland China.
 
 ### Mobile phone number
 
-#### Match all (Carrier + MVNO)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0[0-5]|9\d)|\d{2})|9[189]\d{2}|6[67]\d{2})\d{6}$`][Match all (Carrier + MVNO)]
-
-#### Match all (Carrier + MVNO + Satellite + Emergency)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|6[67]\d{2})\d{6}$`][Match all (Carrier + MVNO + Satellite + Emergency)]
-
-#### Match Carrier
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^0129\D](?(?<=4)(?:0[0-5]|9\d)|\d{2})|9[189]\d{2}|66\d{2})\d{6}$`][Match Carrier]
+#### Match all
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^0129\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|66\d{2})\d{6}$`][Match Carrier]
 
 ##### Match China Mobile
 [`^(?:\+?86)?1(?:3[^0-3\D](?(?<=4)[^9\D]|\d)|5[^3-6\D]\d|8[23478]\d|(?:78|98)\d)\d{7}$`][Match Carrier China Mobile]
@@ -38,7 +32,9 @@ A set of regular expressions to match the mobile phone number in mainland China.
 ##### Match Emergency Communication Support Center of [MIIT][MIIT] (Emergency communications)
 [`^(?:\+?86)?174(?:0[6-9]|1[0-2])\d{6}$`][Match Emergency Communication Support Center of MIIT]
 
-#### Match MVNO
+### MVNO number
+
+#### Match all
 [`^(?:\+?86)?1(?:7[01]|67)\d{8}$`][Match MVNO]
 
 ##### Match China Mobile
@@ -182,11 +178,7 @@ MIT
 
 [Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/rijtmv7KlHQO8i0g
 
-[Match all (Carrier + MVNO)]: https://www.debuggex.com/r/hRJMNKTKON30Y_d_
-
-[Match all (Carrier + MVNO + Satellite + Emergency)]: https://www.debuggex.com/r/LqA8Pct_4vdywTis
-
-[Match Carrier]: https://www.debuggex.com/r/4SscQaBESV0o00-k
+[Match Carrier]: https://www.debuggex.com/r/GVH02k6ElM2ECgR1
 
 [Match Carrier China Mobile]: https://www.debuggex.com/r/jk_ssp9F_UjNq9qp
 
