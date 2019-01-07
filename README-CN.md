@@ -5,10 +5,10 @@
 ## 正则表达式 ([PCRE])
 
 ### 匹配所有号码（手机卡 + 数据卡 + 上网卡）
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|6[67]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][匹配所有号码（手机卡 + 数据卡 + 上网卡）]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|6[567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][匹配所有号码（手机卡 + 数据卡 + 上网卡）]
 
 ### 匹配所有支持短信功能的号码（手机卡 + 上网卡）
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|6[67]\d{2}|4[579]\d{2})\d{6}$`][匹配所有支持短信功能的号码（手机卡 + 上网卡）]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^29\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|6[567]\d{2}|4[579]\d{2})\d{6}$`][匹配所有支持短信功能的号码（手机卡 + 上网卡）]
 
 ### 手机卡
 
@@ -16,13 +16,13 @@
 [`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^0129\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|66\d{2})\d{6}$`][匹配基础运营商]
 
 ##### 匹配中国移动
-[`^(?:\+?86)?1(?:3[^0-3\D](?(?<=4)[^9\D]|\d)|5[^3-6\D]\d|8[23478]\d|(?:78|98)\d)\d{7}$`][匹配中国移动]
+[`^(?:\+?86)?1(?:3[^0-3\D](?(?<=4)[^9\D]|\d)|5[^3-6\D]\d|8[23478]\d|(?:78|98)\d)\d{7}$`][匹配基础运营商中国移动]
 
 ##### 匹配中国联通
-[`^(?:\+?86)?1(?:3[0-2]|[578][56]|66)\d{8}$`][匹配中国联通]
+[`^(?:\+?86)?1(?:3[0-2]|[578][56]|66)\d{8}$`][匹配基础运营商中国联通]
 
 ##### 匹配中国电信
-[`^(?:\+?86)?1(?:3[34](?(?<=4)(?:9)|\d)\d|53\d{2}|8[019]\d{2}|7[347](?(?<=4)(?:0[0-5])|\d{2})|9[19]\d{2})\d{6}$`][匹配中国电信]
+[`^(?:\+?86)?1(?:3[34](?(?<=4)(?:9)|\d)\d|53\d{2}|8[019]\d{2}|7[347](?(?<=4)(?:0[0-5])|\d{2})|9[19]\d{2})\d{6}$`][匹配基础运营商中国电信]
 
 ##### 匹配北京船舶通信导航有限公司（海事卫星通信）
 [`^(?:\+?86)?1749\d{7}$`][匹配北京船舶通信导航有限公司（海事卫星通信）]
@@ -33,10 +33,10 @@
 ### 虚拟运营商
 
 #### 匹配所有
-[`^(?:\+?86)?1(?:7[01]|67)\d{8}$`][匹配虚拟运营商]
+[`^(?:\+?86)?1(?:7[01]|6[57])\d{8}$`][匹配虚拟运营商]
 
 ##### 匹配中国移动
-[`^(?:\+?86)?170[356]\d{7}$`][匹配虚拟运营商中国移动]
+[`^(?:\+?86)?1(?:65\d|70[356])\d{7}$`][匹配虚拟运营商中国移动]
 
 ##### 匹配中国联通
 [`^(?:\+?86)?1(?:70[4789]|71\d|67\d)\d{7}$`][匹配虚拟运营商中国联通]
@@ -101,7 +101,7 @@ https://www.debuggex.com （PCRE 在线视觉化）
 
 | 运营商 <sup>[1]<sup/> | 号段 |
 | --- | --- |
-| 中国移动 | 1703 / 1705 / 1706 |
+| 中国移动 | 165 / 1703 / 1705 / 1706 |
 | 中国联通 | 167 / 1704 / 1707 / 1708 / 1709 / 171 |
 | 中国电信 | 1700 / 1701 / 1702 |
 
@@ -135,6 +135,9 @@ https://www.debuggex.com （PCRE 在线视觉化）
 [中国内地移动终端通讯号码 - 维基百科]
 
 ## 更新日志
+
+#### 2019.01.07
+- 添加 165 号段支持。
 
 #### 2018.12.30
 - 加入可选的国家码匹配。
@@ -170,45 +173,45 @@ MIT
 
 [PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
 
-[匹配所有号码（手机卡 + 数据卡 + 上网卡）]: https://www.debuggex.com/r/mkDAfBqUBcz3UPCV
+[匹配所有号码（手机卡 + 数据卡 + 上网卡）]: https://www.debuggex.com/r/tLZQT3k0DZqmnP8o
 
-[匹配所有支持短信功能的号码（手机卡 + 上网卡）]: https://www.debuggex.com/r/rijtmv7KlHQO8i0g
+[匹配所有支持短信功能的号码（手机卡 + 上网卡）]: https://www.debuggex.com/r/VbgdCcGSZcr9Kcgi
 
-[匹配基础运营商]: https://www.debuggex.com/r/GVH02k6ElM2ECgR1
+[匹配基础运营商]: https://www.debuggex.com/r/YbIeQ_M4s88_9NHG
 
-[匹配中国移动]: https://www.debuggex.com/r/jk_ssp9F_UjNq9qp
+[匹配基础运营商中国移动]: https://www.debuggex.com/r/_oGTPFpiqUNdaP8t
 
-[匹配中国联通]: https://www.debuggex.com/r/QOxzGeF8SfgcptbP
+[匹配基础运营商中国联通]: https://www.debuggex.com/r/n8onnyBbDV-hN7mU
 
-[匹配中国电信]: https://www.debuggex.com/r/23vZONRS1pGamhPV
+[匹配基础运营商中国电信]: https://www.debuggex.com/r/r3m8n91BeWXfncGO
 
-[匹配北京船舶通信导航有限公司（海事卫星通信）]: https://www.debuggex.com/r/r0uZBMlj532q4veO
+[匹配北京船舶通信导航有限公司（海事卫星通信）]: https://www.debuggex.com/r/Ewdta8YJfreoXguf
 
-[工业和信息化部应急通信保障中心（应急通信）]: https://www.debuggex.com/r/TzANv7xKdJ5fTH0g
+[工业和信息化部应急通信保障中心（应急通信）]: https://www.debuggex.com/r/ueZ3m3NQr400LWmF
 
-[匹配虚拟运营商]: https://www.debuggex.com/r/jf31RC7Gw3KICMGL
+[匹配虚拟运营商]: https://www.debuggex.com/r/wtY28Kvn-Ksu-Dcv
 
-[匹配虚拟运营商中国移动]: https://www.debuggex.com/r/UtxhQkv2zdoHmyNj
+[匹配虚拟运营商中国移动]: https://www.debuggex.com/r/eXKVlO3E5W9wn5RJ
 
-[匹配虚拟运营商中国联通]: https://www.debuggex.com/r/9Nrn5MKTLgStKz8v
+[匹配虚拟运营商中国联通]: https://www.debuggex.com/r/bKyapelcUxT0KZXb
 
-[匹配虚拟运营商中国电信]: https://www.debuggex.com/r/1SMVeDUaTlavk8An
+[匹配虚拟运营商中国电信]: https://www.debuggex.com/r/kIhclgXmlEF57w2r
 
-[匹配所有物联网数据卡]: https://www.debuggex.com/r/RuKG4HGLlnMIhEI2
+[匹配所有物联网数据卡]: https://www.debuggex.com/r/95embzRGAR76zPIV
 
-[匹配物联网中国移动]: https://www.debuggex.com/r/LeTJnmJM5S_89Dfv
+[匹配物联网中国移动]: https://www.debuggex.com/r/lVn_7eMXVOEiXXK_
 
-[匹配物联网中国联通]: https://www.debuggex.com/r/8ds-hjavZnMYrKdZ
+[匹配物联网中国联通]: https://www.debuggex.com/r/esYULNSOSyXxoACe
 
-[匹配物联网中国电信]: https://www.debuggex.com/r/krlur36GciFk9gTx
+[匹配物联网中国电信]: https://www.debuggex.com/r/9g8nJMl_hWpaGLTi
 
-[匹配所有上网卡]: https://www.debuggex.com/r/05KDU6lrsryyu97H
+[匹配所有上网卡]: https://www.debuggex.com/r/IHFTe5Z099QxCyvb
 
-[匹配上网卡中国移动]: https://www.debuggex.com/r/TlRxg-BANapXWoCQ
+[匹配上网卡中国移动]: https://www.debuggex.com/r/zu-yH27vlHT3oSJ7
 
-[匹配上网卡中国联通]: https://www.debuggex.com/r/8x3isVEU7EnzI1ad
+[匹配上网卡中国联通]: https://www.debuggex.com/r/4YLUXlvZD6VcvPtQ
 
-[匹配上网卡中国电信]: https://www.debuggex.com/r/I5up-UxP53G6-0zS
+[匹配上网卡中国电信]: https://www.debuggex.com/r/uzvr1c395PsqG-K6
 
 [携号转网]: https://zh.wikipedia.org/zh-cn/%E9%9B%BB%E8%A9%B1%E8%99%9F%E7%A2%BC%E5%8F%AF%E6%94%9C%E6%9C%8D%E5%8B%99
 
