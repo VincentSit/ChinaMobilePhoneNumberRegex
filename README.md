@@ -17,19 +17,19 @@ A set of regular expressions to match the mobile phone number in mainland China.
 #### Match all
 [`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7[^0129\D](?(?<=4)(?:0\d|1[0-2]|9\d)|\d{2})|9[189]\d{2}|66\d{2})\d{6}$`][Match Carrier]
 
-##### Match China Mobile
+#### Match China Mobile
 [`^(?:\+?86)?1(?:3[^0-3\D](?(?<=4)[^9\D]|\d)|5[^3-6\D]\d|8[23478]\d|(?:78|98)\d)\d{7}$`][Match Carrier China Mobile]
 
-##### Match China Unicom
+#### Match China Unicom
 [`^(?:\+?86)?1(?:3[0-2]|[578][56]|66)\d{8}$`][Match Carrier China Unicom]
 
-##### Match China Telecom
+#### Match China Telecom
 [`^(?:\+?86)?1(?:3[34](?(?<=4)(?:9)|\d)\d|53\d{2}|8[019]\d{2}|7[347](?(?<=4)(?:0[0-5])|\d{2})|9[19]\d{2})\d{6}$`][Match Carrier China Telecom]
 
-##### Match Inmarsat (Satellite Communications)
+#### Match Inmarsat (Satellite Communications)
 [`^(?:\+?86)?1749\d{7}$`][Match Inmarsat (Satellite Communications)]
 
-##### Match Emergency Communication Support Center of [MIIT][MIIT] (Emergency communications)
+#### Match Emergency Communication Support Center of [MIIT][MIIT] (Emergency communications)
 [`^(?:\+?86)?174(?:0[6-9]|1[0-2])\d{6}$`][Match Emergency Communication Support Center of MIIT]
 
 ### MVNO number
@@ -37,13 +37,13 @@ A set of regular expressions to match the mobile phone number in mainland China.
 #### Match all
 [`^(?:\+?86)?1(?:7[01]|6[57])\d{8}$`][Match MVNO]
 
-##### Match China Mobile
+#### Match China Mobile
 [`^(?:\+?86)?1(?:65\d|70[356])\d{7}$`][Match MVNO China Mobile]
 
-##### Match China Unicom
+#### Match China Unicom
 [`^(?:\+?86)?1(?:70[4789]|71\d|67\d)\d{7}$`][Match MVNO China Unicom]
 
-##### Match China Telecom
+#### Match China Telecom
 [`^(?:\+?86)?170[0-2]\d{7}$`][Match MVNO China Telecom]
 
 ### IoT number
