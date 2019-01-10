@@ -134,6 +134,12 @@ https://www.debuggex.com （PCRE 在线视觉化）
 
 [中国内地移动终端通讯号码 - 维基百科]
 
+## 关注更新
+
+由于手机号码正则表达式具有时效性，所以当任何正则表达式出现变更时，都会发布一个新版本来触发 GitHub 的邮件系统通知所有观察了本项目的用户。如果您希望在任何正则表达式出现变更时及时得到通知，请观察本项目。
+
+[如何观察项目新版本？]
+
 ## 更新日志
 
 #### 2019.01.10
@@ -217,4 +223,6 @@ MIT
 [携号转网]: https://zh.wikipedia.org/zh-cn/%E9%9B%BB%E8%A9%B1%E8%99%9F%E7%A2%BC%E5%8F%AF%E6%94%9C%E6%9C%8D%E5%8B%99
 
 [中国内地移动终端通讯号码 - 维基百科]: https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%86%85%E5%9C%B0%E7%A7%BB%E5%8A%A8%E7%BB%88%E7%AB%AF%E9%80%9A%E8%AE%AF%E5%8F%B7%E7%A0%81
+
+[如何观察项目新版本？]: https://help.github.com/articles/watching-and-unwatching-releases-for-a-repository/#watching-releases-for-a-repository
 

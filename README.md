@@ -137,6 +137,11 @@ https://www.debuggex.com （PCRE visualizer）
 
 [Telephone numbers in China - Wikipedia]
 
+## Stay up to date
+
+Since the mobile phone number regular expression is time-sensitive, when any regular expression is updated, a new version will be released to trigger GitHub's mail system to notify all users who are watching the repository. If you want to be notified when any regular expressions are updated, please watch this repository.
+
+[How to watch releases for a repository?]
 
 ## Release Notes
 
@@ -224,4 +229,6 @@ MIT
 
 [Telephone numbers in China - Wikipedia]: https://en.wikipedia.org/wiki/Telephone_numbers_in_China
 
+
+[How to watch releases for a repository?]: https://help.github.com/articles/watching-and-unwatching-releases-for-a-repository/#watching-releases-for-a-repository
 
