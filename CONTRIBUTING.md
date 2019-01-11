@@ -12,7 +12,7 @@ We gladly accept any PR's assuming they are well written, documented ( if necess
 
 If you're unsure if we'll accept a new feature please open an issue requesting it and we can have a discussion before you code and submit a PR.
 
-If you update the regular expression, you must update its link.
+If you update the regular expression, you must update its link and the corresponding regular expression in [POSIX.md](/POSIX.md).
 
 If you change the list of test numbers for a regular expression, you must update the test numbers for all regular expressions to make sure they are consistent. This means you have to regenerate a new link for each regular expression and update it.
 
@@ -39,7 +39,7 @@ Please do not be offended if we close your issue and reference this document. If
 
 如果您不确定我们是否接受新功能，请打开一个 issue 询问，我们可以在您编码和提交 PR 之前进行讨论。
 
-如果您更新了正则表达式，您必须更新它的链接。
+如果您更新了正则表达式，您必须更新它的链接和 [POSIX-CN.md](/POSIX-CN.md) 中对应的正则表达式。
 
 如果您改变了某一个正则表达式的测试号码列表，您必须更新所有正则表达式的测试号码，确保它们一致。这也就意味着您必须重新为每一个正则表达式生成一个新的链接并更新。
 

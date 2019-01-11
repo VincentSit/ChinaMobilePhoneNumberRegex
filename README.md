@@ -1,10 +1,12 @@
 # ChinaMobilePhoneNumberRegex
 
-## [中文文档](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/blob/master/README-CN.md "Chinese documentation")
+## [中文文档](/README-CN.md "Chinese documentation")
 
 A set of regular expressions to match the mobile phone number in mainland China.
 
-## Regular Expressions
+## Regular Expressions ([PCRE])
+
+###### If you need POSIX standard regular expressions, [Click here](/POSIX.md).
 
 ### Match all numbers (Phone number + IoT number + Data only number)
 [`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[01356789]\d{2}|4(?:0\d|1[0-2]|9\d))|9[189]\d{2}|6[567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
@@ -182,6 +184,8 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 ## License
 
 MIT
+
+[PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
 
 [Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/6Umw2aVUvd0_1eLm
 
