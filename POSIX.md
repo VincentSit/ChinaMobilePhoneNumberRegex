@@ -1,5 +1,7 @@
 # [POSIX] Standard Regular Expressions
 
+## [中文文档](/POSIX-CN.md "Chinese documentation")
+
 Regular expressions mainly have [PCRE] and [POSIX] two standards, The [POSIX] standard has five favors: BRE (Basic Regular Expressions), GNU BRE, ERE (Extended Regular Expressions), GNU ERE, and the deprecated SRE (Simple Regular Expressions). The syntax is not consistent between each other.
 
 Since the [PCRE] standard is widely supported by various popular programming languages, the regular expressions in this project are all [PCRE]. The [POSIX] standard is currently supported primarily by various Unix-like system built-in commands, such as `awk`, `sed` and other commands in Linux.
