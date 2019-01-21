@@ -2,11 +2,11 @@
 
 ## [中文文档](/POSIX-CN.md "Chinese documentation")
 
-Regular expressions mainly have [PCRE] and [POSIX] two standards, The [POSIX] standard has five favors: BRE (Basic Regular Expressions), GNU BRE, ERE (Extended Regular Expressions), GNU ERE, and the deprecated SRE (Simple Regular Expressions). The syntax is not consistent between each other.
+Regular expressions mainly have [PCRE] and [POSIX] two standards, The [POSIX] standard has five flavors: BRE (Basic Regular Expressions), GNU BRE, ERE (Extended Regular Expressions), GNU ERE, and the deprecated SRE (Simple Regular Expressions). The syntax is not consistent between each other.
 
 Since the [PCRE] standard is widely supported by various popular programming languages, the regular expressions in this project are all [PCRE]. The [POSIX] standard is currently supported primarily by various Unix-like system built-in commands, such as `awk`, `sed` and other commands in Linux.
 
-Due to the large number of Unix-like systems and a long history, there are many implementation versions of the same command (for example, `awk` has many implementations such as `awk`, `gawk`, `mawk`, `nawk`), they may use different favors and it's difficult to be compatible with all favors and commands. Therefore, the regular expressions listed in this document are only compatible with the following two favors:
+Due to the large number of Unix-like systems and a long history, there are many implementation versions of the same command (for example, `awk` has many implementations such as `awk`, `gawk`, `mawk`, `nawk`), they may use different flavors and it's difficult to be compatible with all flavors and commands. Therefore, the regular expressions listed in this document are only compatible with the following two flavors:
 
 - GNU BRE (gsed - GNU sed)
 - GNU ERE (gawk - GNU awk, ggrep - GNU grep)
