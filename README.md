@@ -4,6 +4,10 @@
 
 A set of regular expressions to match the mobile phone number in mainland China.
 
+## Limitation
+
+The mobile number portability(MNP) service in mainland China has been officially available on December 1, 2019, China Standard Time. It is no longer accurate to detect carriers by mobile phone numbers. However, there is no alternative.
+
 ## Regular Expressions ([PCRE])
 
 ###### If you need POSIX standard regular expressions, [Click here](/POSIX.md).
@@ -147,39 +151,41 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 
 ## Release Notes
 
-#### 2019.01.10
+#### December 1, 2019
+- Add reminder for mobile number portability service.
+
+#### January 10, 2019
 - Optimize the compatibility of some regular expressions in JavaScript.
 
-#### 2019.01.07
+#### January 7, 2019
 - Add support for 165 prefix.
 
-#### 2018.12.30
+#### December 30, 2018
 - Add an optional country code match.
 - Add regular expression visualization links.
 - Fix 17X prefix cannot match when matching non-174X prefix (e.g. 178).
 - Fix non-numbers in negated character classes is not excluded.
 - Optimize some regular expressions.
 
-#### 2018.12.29
+#### December 29, 2018
 - Add support for 146 / 149 / 167 / 191 / 1440X / 148XX / 1410X / 174\-00\~05 / 174\-06\~12 / 174\-9 prefix.
 
-#### 2017.08.09
+#### August 9, 2017
 - Add support for 166 / 198 / 199 prefix.
 
-#### 2016.10.15
+#### October 15, 2016
 - Add English documentation.
 - Add support for 175 prefix.
 - Remove test project.
 - Fix 1349 matching issues.
 
-#### 2016.04.05
+#### April 5, 2016
 - Add the 171 prefix support.
 - Separate 14\* prefix matching.
 - Improve the MVNO prefix matching.
 
-#### 2014.12.19
+#### December 19, 2014
 - Initial release.
-
 
 ## License
 
