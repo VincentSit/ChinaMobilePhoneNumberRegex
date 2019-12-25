@@ -13,15 +13,15 @@ The mobile number portability(MNP) service in mainland China has been officially
 ###### If you need POSIX standard regular expressions, [Click here](/POSIX.md).
 
 ### Match all numbers (Phone number + IoT number + Data only number)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[01356789]\d{2}|4(?:0\d|1[0-2]|9\d))|9[13589]\d{2}|6[2567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[01356789]\d{2}|4(?:0\d|1[0-2]|9\d))|9[01356789]\d{2}|6[2567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
 
 ### Match all numbers with SMS (Phone number + Data only number)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[01356789]\d{2}|4(?:0\d|1[0-2]|9\d))|9[13589]\d{2}|6[2567]\d{2}|4[579]\d{2})\d{6}$`][Match all numbers with SMS (Phone number + Data only number)]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[01356789]\d{2}|4(?:0\d|1[0-2]|9\d))|9[01356789]\d{2}|6[2567]\d{2}|4[579]\d{2})\d{6}$`][Match all numbers with SMS (Phone number + Data only number)]
 
 ### Mobile phone number
 
 #### Match all
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[35678]\d{2}|4(?:0\d|1[0-2]|9\d))|9[13589]\d{2}|66\d{2})\d{6}$`][Match Carrier]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[35678]\d{2}|4(?:0\d|1[0-2]|9\d))|9[01356789]\d{2}|66\d{2})\d{6}$`][Match Carrier]
 
 #### Match China Mobile
 [`^(?:\+?86)?1(?:3(?:4[^9\D]|[5-9]\d)|5[^3-6\D]\d|8[23478]\d|(?:78|98)\d)\d{7}$`][Match Carrier China Mobile]
@@ -95,9 +95,9 @@ https://www.debuggex.com （PCRE visualizer）
  
 | Carrier <sup>[1]<sup/> | Prefix |
 | --- | --- |
-| China Mobile | 134-0~8 / 135 / 136 / 137 / 138 / 139 / 150 / 151 / 152 / 157 / 158 / 159 / 178 / 182 / 183 / 184 / 187 / 188 / 195 / 198 |
-| China Unicom | 130 / 131 / 132 / 155 / 156 / 166 / 175 / 176 / 185 / 186 |
-| China Telecom | 133 / 134-9 / 153 / 173 / 174-00~05 / 177 / 180 / 181 / 189 / 191 / 193 / 199 |
+| China Mobile | 134-0~8 / 135 / 136 / 137 / 138 / 139 / 150 / 151 / 152 / 157 / 158 / 159 / 178 / 182 / 183 / 184 / 187 / 188 / 195 / 197 / 198 |
+| China Unicom | 130 / 131 / 132 / 155 / 156 / 166 / 175 / 176 / 185 / 186 / 196 |
+| China Telecom | 133 / 134-9 / 153 / 173 / 174-00~05 / 177 / 180 / 181 / 189 / 190 / 191 / 193 / 199 |
 | Inmarsat (Satellite) <sup>[2]<sup/> | 174-9 |
 | Emergency Communication Support Center of MIIT (Emergency communications) | 174-06~12 |
 
@@ -151,6 +151,9 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 
 ## Release Notes
 
+#### December 26, 2019
+- Add support for 190 / 196 / 197 prefix.
+
 #### December 24, 2019
 - Add support for 162 / 193 / 195 prefix.
 
@@ -196,11 +199,11 @@ MIT
 
 [PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
 
-[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/bI_nSAY542fXCKTU
+[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/bGTEJTtkPpRBGGmZ
 
-[Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/Wm42QqxS69C4FyYU
+[Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/AT6yjr-CCHDJ8Zzp
 
-[Match Carrier]: https://www.debuggex.com/r/SARQVQHK81YkIVBw
+[Match Carrier]: https://www.debuggex.com/r/MdCwnbmyRqFWFCWT
 
 [Match Carrier China Mobile]: https://www.debuggex.com/r/dbF9BmNrGrq4vvWi
 
