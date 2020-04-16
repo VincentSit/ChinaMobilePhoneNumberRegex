@@ -13,24 +13,27 @@ The mobile number portability(MNP) service in mainland China has been officially
 ###### If you need POSIX standard regular expressions, [Click here](/POSIX.md).
 
 ### Match all numbers (Phone number + IoT number + Data only number)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0135-9]\d{2}|6[2567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
 
 ### Match all numbers with SMS (Phone number + Data only number)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0135-9]\d{2}|6[2567]\d{2}|4[579]\d{2})\d{6}$`][Match all numbers with SMS (Phone number + Data only number)]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4[579]\d{2})\d{6}$`][Match all numbers with SMS (Phone number + Data only number)]
 
 ### Mobile phone number
 
 #### Match all
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[235-8]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0135-9]\d{2}|66\d{2})\d{6}$`][Match Carrier]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[235-8]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|66\d{2})\d{6}$`][Match Carrier]
 
 #### Match China Mobile
-[`^(?:\+?86)?1(?:3(?:4[^9\D]|[5-9]\d)|5[^3-6\D]\d|7[28]\d|8[23478]\d|98\d)\d{7}$`][Match Carrier China Mobile]
+[`^(?:\+?86)?1(?:3(?:4[^9\D]|[5-9]\d)|5[^3-6\D]\d|7[28]\d|8[23478]\d|9[578]\d)\d{7}$`][Match Carrier China Mobile]
 
 #### Match China Unicom
-[`^(?:\+?86)?1(?:3[0-2]|[578][56]|66)\d{8}$`][Match Carrier China Unicom]
+[`^(?:\+?86)?1(?:3[0-2]|[578][56]|66|96)\d{8}$`][Match Carrier China Unicom]
 
 #### Match China Telecom
-[`^(?:\+?86)?1(?:3(?:3\d|49)\d|53\d{2}|8[019]\d{2}|7(?:[37]\d{2}|40[0-5])|9[139]\d{2})\d{6}$`][Match Carrier China Telecom]
+[`^(?:\+?86)?1(?:3(?:3\d|49)\d|53\d{2}|8[019]\d{2}|7(?:[37]\d{2}|40[0-5])|9[0139]\d{2})\d{6}$`][Match Carrier China Telecom]
+
+#### Match China Broadcast Network
+[`^(?:\+?86)?192\d{8}$`][Match Carrier China Broadcast Network]
 
 #### Match Inmarsat (Satellite Communications)
 [`^(?:\+?86)?1749\d{7}$`][Match Inmarsat (Satellite Communications)]
@@ -98,6 +101,7 @@ https://www.debuggex.com （PCRE visualizer）
 | China Mobile | 134-0~8 / 135 / 136 / 137 / 138 / 139 / 150 / 151 / 152 / 157 / 158 / 159 / 172 / 178 / 182 / 183 / 184 / 187 / 188 / 195 / 197 / 198 |
 | China Unicom | 130 / 131 / 132 / 155 / 156 / 166 / 175 / 176 / 185 / 186 / 196 |
 | China Telecom | 133 / 134-9 / 153 / 173 / 174-00~05 / 177 / 180 / 181 / 189 / 190 / 191 / 193 / 199 |
+| China Broadcast Network | 192 |
 | Inmarsat (Satellite) <sup>[2]<sup/> | 174-9 |
 | Emergency Communication Support Center of MIIT (Emergency communications) | 174-06~12 |
 
@@ -151,6 +155,9 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 
 ## Release Notes
 
+#### April 16, 2020
+- Add support for 192 prefix.
+
 #### April 7, 2020
 - Add support for 172 prefix.
 
@@ -202,17 +209,19 @@ MIT
 
 [PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
 
-[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/k6IfZg62IRiasa_Y
+[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/OLNV3F0jAxT_6ToW
 
-[Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/cnRdaNTC0eVFl9mS
+[Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/IivlZsRjoXSX_FJ3
 
-[Match Carrier]: https://www.debuggex.com/r/wISclg7wpDl9MAgl
+[Match Carrier]: https://www.debuggex.com/r/J1CfULu4yR_8AF9w
 
-[Match Carrier China Mobile]: https://www.debuggex.com/r/pJB_nwdRmHyhedxq
+[Match Carrier China Mobile]: https://www.debuggex.com/r/yVWOF0Gglm9xCCqF
 
-[Match Carrier China Unicom]: https://www.debuggex.com/r/n8onnyBbDV-hN7mU
+[Match Carrier China Unicom]: https://www.debuggex.com/r/ntO95QNIS8SEsHet
 
-[Match Carrier China Telecom]: https://www.debuggex.com/r/ImjyBMt4S7QcQEP_
+[Match Carrier China Telecom]: https://www.debuggex.com/r/liI6MhT97bNIQTp-
+
+[Match Carrier China Broadcast Network]: https://www.debuggex.com/r/cFcG0x8htmWNm-xF
 
 [Match Inmarsat (Satellite Communications)]: https://www.debuggex.com/r/Ewdta8YJfreoXguf
 
