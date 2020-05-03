@@ -155,7 +155,7 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 
 ## Release Notes
 
-#### May 5, 2020
+#### May 3, 2020
 - Add support for 1441 prefix.
 
 #### April 16, 2020
