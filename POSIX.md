@@ -109,7 +109,7 @@ See https://help.github.com/articles/organizing-information-with-tables/#formatt
 | GNU BRE | `^\(+\?86\)\?192[0-9]\{8\}$` |
  -->
 
-| 命令 | 正则表达式 |
+| Command | Regular Expression |
 | --- | --- |
 | GNU ERE | `^(+?86)?192[0-9]{8}$` |
 | GNU BRE | `^\(+\?86\)\?192[0-9]\{8\}$` |
