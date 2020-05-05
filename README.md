@@ -13,7 +13,7 @@ The mobile number portability(MNP) service in mainland China has been officially
 ###### If you need POSIX standard regular expressions, [Click here](/POSIX.md).
 
 ### Match all numbers (Phone number + IoT number + Data only number)
-[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4(?:[14]0\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
+[`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4(?:(?:10|4[01])\d{3}|[68]\d{4}|[579]\d{2}))\d{6}$`][Match all numbers (Phone number + IoT number + Data only number)]
 
 ### Match all numbers with SMS (Phone number + Data only number)
 [`^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[0-35-9]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|6[2567]\d{2}|4[579]\d{2})\d{6}$`][Match all numbers with SMS (Phone number + Data only number)]
@@ -58,10 +58,10 @@ The mobile number portability(MNP) service in mainland China has been officially
 ### IoT number
 
 #### Match all
-[`^(?:\+?86)?14(?:[14]0\d|[68]\d{2})\d{8}$`][Match IoT]
+[`^(?:\+?86)?14(?:[14]0|41|[68]\d)\d{9}$`][Match IoT]
 
 #### Match China Mobile
-[`^(?:\+?86)?14(?:40|8\d)\d{9}$`][Match IoT China Mobile]
+[`^(?:\+?86)?14(?:4[01]|8\d)\d{9}$`][Match IoT China Mobile]
 
 #### Match China Unicom
 [`^(?:\+?86)?146\d{10}$`][Match IoT China Unicom]
@@ -124,7 +124,7 @@ https://www.debuggex.com （PCRE visualizer）
 
 | Carrier <sup>[1]<sup/> | Prefix |
 | --- | --- |
-| China Mobile | 1440X / 148XX |
+| China Mobile | 1440X / 1441X / 148XX |
 | China Unicom | 146XX |
 | China Telecom | 1410X |
 
@@ -154,6 +154,9 @@ Since the mobile phone number regular expression is time-sensitive, when any reg
 [How to watch releases for a repository?]
 
 ## Release Notes
+
+#### May 3, 2020
+- Add support for 1441 prefix.
 
 #### April 16, 2020
 - Add support for 192 prefix.
@@ -209,7 +212,7 @@ MIT
 
 [PCRE]: https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
 
-[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/OLNV3F0jAxT_6ToW
+[Match all numbers (Phone number + IoT number + Data only number)]: https://www.debuggex.com/r/dwRbKIxaFfBEIkxh
 
 [Match all numbers with SMS (Phone number + Data only number)]: https://www.debuggex.com/r/IivlZsRjoXSX_FJ3
 
@@ -235,7 +238,7 @@ MIT
 
 [Match MVNO China Telecom]: https://www.debuggex.com/r/j22iLshKfI_avga-
 
-[Match IoT]: https://www.debuggex.com/r/95embzRGAR76zPIV
+[Match IoT]: https://www.debuggex.com/r/paDEMqjp1F5dM40F
 
 [Match IoT China Mobile]: https://www.debuggex.com/r/lVn_7eMXVOEiXXK_
 
