@@ -1,5 +1,7 @@
 # ChinaMobilePhoneNumberRegex
 
+**ChinaMobilePhoneNumberRegex is still actively maintained, we are committed to fixing bugs and merging good quality PRs from the wider community.**
+
 ## [中文文档](/README-CN.md "Chinese documentation")
 
 A set of regular expressions to match the mobile phone number in mainland China.

@@ -1,5 +1,7 @@
 # ChinaMobilePhoneNumberRegex
 
+**ChinaMobilePhoneNumberRegex 仍在积极维护中，我们致力于修复错误并合并来自更广泛社区的高质量的PR。**
+
 一组匹配中国大陆手机号码的正则表达式。
 
 ## 限制
